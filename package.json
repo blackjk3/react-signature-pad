@@ -1,0 +1,36 @@
+{
+  "name": "react-signature-pad",
+  "version": "0.0.1",
+  "description": "A signature pad implementation for react.",
+  "main": "lib/app.js",
+  "scripts": {
+    "test": "webpack && npm pack",
+    "start": "webpack-dev-server --hot --inline",
+    "dist": "webpack -p --config webpack.production.config.js"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "signature",
+    "form",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackjk3/react-signature-pad.git"
+  },
+  "author": "Jason Kadrmas",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.3.1",
+    "node-libs-browser": "^0.5.2",
+    "react": ">=0.13.3",
+    "react-hot-loader": "^1.2.7",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "peerDependencies": {
+    "react": ">=0.13.3"
+  }
+}
