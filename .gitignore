@@ -5,6 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /tmp
+/build
 
 .DS_Store
 /node_modules/*
