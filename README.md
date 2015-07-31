@@ -8,7 +8,7 @@ var React = require('react');
 var SignaturePad = require('react-signature-pad');
 
 React.render(
-  <SignaturePad />,
+  <SignaturePad clearButton="true" />,
   document.body
 )
 ```
