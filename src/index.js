@@ -29,7 +29,10 @@ export default class SignaturePad extends React.Component {
     this._resizeCanvas();
   }
 
-  clear() {
+  clear(e) {
+    if(e) {
+      e.preventDefault();
+    }
     var ctx = this._ctx,
         canvas = this._canvas;
 
