@@ -1,6 +1,6 @@
 {
   "name": "react-signature-pad",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A signature pad implementation for react.",
   "main": "lib/app.js",
   "scripts": {

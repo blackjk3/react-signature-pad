@@ -1,7 +1,7 @@
 # React Signature Pad
 A [signature pad](https://github.com/szimek/signature_pad) implementation for react.
 
-# Usage
+# Basic Usage
 
 ```javascript
 var React = require('react');
@@ -11,6 +11,42 @@ React.render(
   <SignaturePad clearButton="true" />,
   document.body
 )
+```
+
+# Methods
+
+```javascript
+<SignaturePad clearButton="true" ref="mySignature" />
+...
+
+var signature = React.findDOMNode(this.refs.mySignature);
+
+// Methods
+
+// ===============================================
+// isEmpty() - returns boolean
+// ===============================================
+
+signature.isEmpty();
+
+// ===============================================
+// clear() - clears canvas
+// ===============================================
+
+signature.clear();
+
+// ===============================================
+// toDataURL() - retrieves image as a data url
+// ===============================================
+
+signature.toDataURL();
+
+// ===============================================
+// fromDataURL() - writes a base64 image to canvas
+// ===============================================
+
+signature.fromDataURL(base64String);
+
 ```
 
 # CSS

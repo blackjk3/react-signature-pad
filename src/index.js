@@ -49,7 +49,22 @@ export default class SignaturePad extends React.Component {
   toDataURL(imageType, quality) {
     var canvas = this._canvas;
     return canvas.toDataURL.apply(canvas, arguments);
-  };
+  }
+
+  fromDataURL(dataUrl) {
+    var self = this,
+        image = new Image(),
+        ratio = window.devicePixelRatio || 1,
+        width = this._canvas.width / ratio,
+        height = this._canvas.height / ratio;
+
+    this._reset();
+    image.src = dataUrl;
+    image.onload = function () {
+      self._ctx.drawImage(image, 0, 0, width, height);
+    };
+    this._isEmpty = false;
+  }
 
   isEmpty() {
     return this._isEmpty;
@@ -81,6 +96,7 @@ export default class SignaturePad extends React.Component {
     this._canvas.addEventListener("mousedown", this._handleMouseDown.bind(this));
     this._canvas.addEventListener("mousemove", this._handleMouseMove.bind(this));
     document.addEventListener("mouseup", this._handleMouseUp.bind(this));
+    window.addEventListener("resize", this._resizeCanvas.bind(this));
   };
 
   _handleTouchEvents() {
@@ -100,6 +116,8 @@ export default class SignaturePad extends React.Component {
     this._canvas.removeEventListener("touchstart", this._handleTouchStart);
     this._canvas.removeEventListener("touchmove", this._handleTouchMove);
     document.removeEventListener("touchend", this._handleTouchEnd);
+
+    window.removeEventListener("resize", this._resizeCanvas);
   }
 
   _handleMouseDown(event) {
