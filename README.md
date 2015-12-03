@@ -21,7 +21,7 @@ React.render(
 <SignaturePad clearButton="true" ref="mySignature" />
 ...
 
-var signature = React.findDOMNode(this.refs.mySignature);
+var signature = this.refs.mySignature;
 
 // Methods
 
