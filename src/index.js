@@ -20,7 +20,7 @@ export default class SignaturePad extends React.Component {
   }
 
   componentDidMount() {
-    this._canvas = React.findDOMNode(this.refs.cv);
+    this._canvas = this.refs.cv;
     this._ctx = this._canvas.getContext("2d");
     this.clear();
 
