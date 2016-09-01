@@ -1,34 +1,19 @@
 module.exports = {
-  entry: {
-    app: ["./src/index.js"]
-  },
-
-  // output: {
-  //   filename: "app.js",
-  //   path: __dirname + "/lib",
-  // },
-
+  entry: './src/index.js',
   output: {
-    path: __dirname + "/lib",
-    filename: "app.js",
-    library: 'SignaturePad',
+    path: __dirname + '/build',
+    filename: 'index.js',
+    library: 'SignatureCanvas',
     libraryTarget: 'umd',
   },
-
-  externals: {
-    //don't bundle the 'react' npm package with our bundle.js
-    //but get it from a global 'React' variable
-    'react': 'react',
-    'react-dom': 'react-dom'
-  },
-
+  // don't bundle non-relative packages
+  externals: /^[^.]/,
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ["babel-loader"]
-      }
-    ],
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {presets: ['es2015', 'react', 'stage-2']}
+    }]
   }
 }

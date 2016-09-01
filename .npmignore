@@ -1,4 +1,5 @@
-build/
+example/
+webpack.*
 
 npm-debug.log*
 node_modules/
