@@ -33,4 +33,5 @@ body {
   background-size: 200px 50px;
   width: 200px;
   height: 50px;
+  background-color: white;
 }

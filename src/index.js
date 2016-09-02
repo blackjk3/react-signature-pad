@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import copyCanvas from 'copy-canvas'
 import trimCanvas from 'trim-canvas'
 
 import Bezier from './bezier.js'
@@ -73,7 +72,13 @@ export default class SignatureCanvas extends Component {
 
   // return a trimmed copy of the canvas
   getTrimmedCanvas = () => {
-    return trimCanvas(copyCanvas(this._canvas))
+    // copy the canvas
+    let copy = document.createElement('canvas')
+    copy.width = this._canvas.width
+    copy.height = this._canvas.height
+    copy.getContext('2d').drawImage(this._canvas, 0, 0)
+    // then trim it
+    return trimCanvas(copy)
   }
 
   isEmpty = () => this._isEmpty

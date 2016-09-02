@@ -1,6 +1,6 @@
 {
   "name": "react-signature-canvas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A signature pad implementation in React",
   "main": "build/index.js",
   "scripts": {
@@ -45,7 +45,6 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "dependencies": {
-    "copy-canvas": "^1.0.0",
     "trim-canvas": "^0.1.0"
   }
 }
