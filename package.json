@@ -1,6 +1,6 @@
 {
   "name": "react-signature-canvas",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A signature pad implementation in React",
   "main": "build/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "url": "https://github.com/agilgur5/react-signature-canvas.git"
   },
   "author": "Anton Gilgur",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "babel-core": "^6.0.14",
     "babel-loader": "^6.0.0",
