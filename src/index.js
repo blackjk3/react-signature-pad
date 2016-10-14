@@ -15,6 +15,7 @@ export default class SignaturePad extends React.Component {
     };
     this.penColor = this.props.penColor || "black";
     this.backgroundColor = this.props.backgroundColor || "rgba(0,0,0,0)";
+    this.onClear = this.props.onClear;
     this.onEnd = this.props.onEnd;
     this.onBegin = this.props.onBegin;
   }
@@ -44,6 +45,9 @@ export default class SignaturePad extends React.Component {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     this._reset();
+    if (typeof this.onClear === 'function') {
+      this.onClear();
+    }
   }
 
   toDataURL(imageType, quality) {
