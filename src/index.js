@@ -79,7 +79,9 @@ export default class SignaturePad extends React.Component {
     var ratio =  Math.max(window.devicePixelRatio || 1, 1);
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
+
     ctx.scale(ratio, ratio);
+    this._isEmpty = true;
   }
 
   _reset() {
