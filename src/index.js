@@ -16,19 +16,18 @@ export default class SignatureCanvas extends Component {
     onBegin: PropTypes.func,
     canvasProps: PropTypes.object
   }
-  constructor(props) {
-    super(props);
 
-    this.velocityFilterWeight = this.props.velocityFilterWeight || 0.7;
-    this.minWidth = this.props.minWidth || 0.5;
-    this.maxWidth = this.props.maxWidth || 2.5;
-    this.dotSize = this.props.dotSize || function () {
-        return (this.minWidth + this.maxWidth) / 2;
-    };
-    this.penColor = this.props.penColor || "black";
-    this.backgroundColor = this.props.backgroundColor || "rgba(0,0,0,0)";
-    this.onEnd = this.props.onEnd;
-    this.onBegin = this.props.onBegin;
+  static defaultProps = {
+    velocityFilterWeight: 0.7,
+    minWidth: 0.5,
+    maxWidth: 2.5,
+    dotSize: () => {
+      return (this.props.minWidth + this.props.maxWidth) / 2
+    },
+    penColor: 'black',
+    backgroundColor: 'rgba(0,0,0,0)',
+    onEnd: () => {},
+    onBegin: () => {}
   }
 
   componentDidMount () {
@@ -48,7 +47,7 @@ export default class SignatureCanvas extends Component {
     let ctx = this._ctx
     let canvas = this._canvas
 
-    ctx.fillStyle = this.backgroundColor
+    ctx.fillStyle = this.props.backgroundColor
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     this._reset()
@@ -110,9 +109,9 @@ export default class SignatureCanvas extends Component {
   _reset = () => {
     this.points = [];
     this._lastVelocity = 0;
-    this._lastWidth = (this.minWidth + this.maxWidth) / 2;
+    this._lastWidth = (this.props.minWidth + this.props.maxWidth) / 2
     this._isEmpty = true;
-    this._ctx.fillStyle = this.penColor;
+    this._ctx.fillStyle = this.props.penColor
   }
 
   _handleMouseEvents = () => {
@@ -193,14 +192,14 @@ export default class SignatureCanvas extends Component {
   _strokeBegin = (ev) => {
     this._reset()
     this._strokeUpdate(ev)
-    if (typeof this.onBegin === 'function') {
-      this.onBegin(ev)
-    }
+    this.props.onBegin(ev)
   }
 
   _strokeDraw = (point) => {
-    var ctx = this._ctx,
-        dotSize = typeof(this.dotSize) === 'function' ? this.dotSize() : this.dotSize;
+    let ctx = this._ctx
+    let dotSize = typeof(this.props.dotSize) === 'function'
+      ? this.props.dotSize()
+      : this.props.dotSize
 
     ctx.beginPath();
     this._drawPoint(point.x, point.y, dotSize);
@@ -215,9 +214,8 @@ export default class SignatureCanvas extends Component {
     if (!canDrawCurve && point) {
       this._strokeDraw(point);
     }
-    if (typeof this.onEnd === 'function') {
-      this.onEnd(ev)
-    }
+
+    this.props.onEnd(ev)
   }
 
   _createPoint = (ev) => {
@@ -281,8 +279,8 @@ export default class SignatureCanvas extends Component {
         velocity, newWidth;
 
     velocity = endPoint.velocityFrom(startPoint);
-    velocity = this.velocityFilterWeight * velocity
-        + (1 - this.velocityFilterWeight) * this._lastVelocity;
+    velocity = this.props.velocityFilterWeight * velocity
+      + (1 - this.props.velocityFilterWeight) * this._lastVelocity;
 
     newWidth = this._strokeWidth(velocity);
     this._drawCurve(curve, this._lastWidth, newWidth);
@@ -333,7 +331,7 @@ export default class SignatureCanvas extends Component {
   }
 
   _strokeWidth = (velocity) => {
-    return Math.max(this.maxWidth / (velocity + 1), this.minWidth);
+    return Math.max(this.props.maxWidth / (velocity + 1), this.props.minWidth)
   }
 
   render () {
