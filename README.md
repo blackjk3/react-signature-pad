@@ -1,6 +1,6 @@
 # React Signature Canvas
 
-[![NPM](https://nodei.co/npm/react-signature-canvas.png)](https://npmjs.org/package/react-signature-canvas)
+[![NPM](https://nodei.co/npm/react-signature-canvas.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/react-signature-canvas)
 
 A [signature pad](https://github.com/szimek/signature_pad) implementation in
 React.
