@@ -10,7 +10,7 @@ var React = require('react');
 var SignaturePad = require('react-signature-pad');
 
 React.render(
-  <SignaturePad clearButton="true" />,
+  <SignaturePad clearButton />,
   document.body
 )
 ```
@@ -18,10 +18,10 @@ React.render(
 # Methods
 
 ```javascript
-<SignaturePad clearButton="true" ref="mySignature" />
+<SignaturePad clearButton="true" ref={(signature) => { this.mySignature = signature; }} />
 ...
 
-var signature = this.refs.mySignature;
+var signature = this.mySignature;
 
 // Methods
 
@@ -52,7 +52,7 @@ signature.fromDataURL(base64String);
 ```
 
 # CSS
-In order to make the signature pad work correctly you will need the css as well.  All the relevant styles are in [this file](style.css).
+In order to make the signature pad work correctly you will need the css as well. All the relevant styles are in [this file](style.css).
 
 # Example
 ```bash
