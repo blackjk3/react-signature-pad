@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "no-restricted-globals": 1,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": [2, 120, 2, {"ignoreUrls": true}]
+  },
+  "env": {
+    "browser": true
+  }
+}

@@ -8,30 +8,36 @@ export default class Bezier {
   }
 
   length() {
-    var steps = 10,
-        length = 0,
-        i, t, cx, cy, px, py, xdiff, ydiff;
+    const steps = 10;
+    let length = 0;
+    let i;
+    let t;
+    let cx;
+    let cy;
+    let px;
+    let py;
+    let xdiff;
+    let ydiff;
 
-    for (i = 0; i <= steps; i++) {
-        t = i / steps;
-        cx = this._point(t, this.startPoint.x, this.control1.x, this.control2.x, this.endPoint.x);
-        cy = this._point(t, this.startPoint.y, this.control1.y, this.control2.y, this.endPoint.y);
-        if (i > 0) {
-            xdiff = cx - px;
-            ydiff = cy - py;
-            length += Math.sqrt(xdiff * xdiff + ydiff * ydiff);
-        }
-        px = cx;
-        py = cy;
+    for (i = 0; i <= steps; i + 1) {
+      t = i / steps;
+      cx = this._point(t, this.startPoint.x, this.control1.x, this.control2.x, this.endPoint.x);
+      cy = this._point(t, this.startPoint.y, this.control1.y, this.control2.y, this.endPoint.y);
+      if (i > 0) {
+        xdiff = cx - px;
+        ydiff = cy - py;
+        length += Math.sqrt((xdiff * xdiff) + (ydiff * ydiff));
+      }
+      px = cx;
+      py = cy;
     }
     return length;
   }
 
   _point(t, start, c1, c2, end) {
-    return start * (1.0 - t) * (1.0 - t)  * (1.0 - t)
-      + 3.0 *  c1    * (1.0 - t) * (1.0 - t)  * t
-      + 3.0 *  c2    * (1.0 - t) * t          * t
-      +        end   * t         * t          * t;
+    return (start * (1.0 - t) * (1.0 - t) * (1.0 - t))
+      + (3.0 * c1 * (1.0 - t) * (1.0 - t) * t)
+      + (3.0 * c2 * (1.0 - t) * t * t)
+      + (end * t * t * t);
   }
-
 }
