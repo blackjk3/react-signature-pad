@@ -4,6 +4,7 @@
   "description": "A signature pad implementation for react.",
   "main": "lib/app.js",
   "scripts": {
+    "pretest": "npm run lint",
     "test": "webpack && npm pack",
     "start": "webpack-dev-server --hot --inline",
     "dist": "webpack -p --config webpack.production.config.js",
