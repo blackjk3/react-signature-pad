@@ -1,4 +1,4 @@
-[![npm package](https://img.shields.io/badge/npm-0.0.1-orange.svg?style=flat-square)](https://www.npmjs.com/package/react-signature-pad-component)
+[![npm package](https://img.shields.io/badge/npm-0.0.5-orange.svg?style=flat-square)](https://www.npmjs.com/package/react-signature-pad)
 
 # React Signature Pad
 A [signature pad](https://github.com/szimek/signature_pad) implementation for react.
