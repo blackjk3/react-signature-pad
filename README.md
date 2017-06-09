@@ -42,7 +42,7 @@ used in drawing. All props are **optional**.
 - `minWidth` : `number`, default: `0.5`
 - `maxWidth` : `number`, default: `2.5`
 - `dotSize` : `number` or `function`,
-  default: `() => (this.props.minWidth + this.props.maxWidth) / 2`
+  default: `(minWidth, maxWidth) => (minWidth + maxWidth) / 2`
 - `penColor` : `string`, default: `'black'`
 
 There are also two callbacks that will be called when a stroke ends and one
