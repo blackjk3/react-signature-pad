@@ -1,12 +1,13 @@
 {
   "name": "react-signature-canvas",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "A signature pad implementation in React",
   "main": "build/index.js",
   "scripts": {
     "test": "webpack && npm pack",
     "start": "webpack-dev-server -d --inline --hot",
-    "dist": "webpack -p --config webpack.production.config.js"
+    "dist": "webpack -p --config webpack.production.config.js",
+    "pub": "npm run dist && npm publish"
   },
   "keywords": [
     "react",
