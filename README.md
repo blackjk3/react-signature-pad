@@ -12,8 +12,8 @@ your canvas -- it's just a wrapper around a single canvas element! Hence the
 naming difference.
 
 This fork also allows you to directly pass [props](#props) to the underlying
-canvas element, has small [API differences](#api), and
-[documents the props](#props) you can pass to it.
+canvas element, has new, documented [API methods](#api) you can use, and has
+new, documented [props](#props) you can pass to it.
 
 ## Installation
 
@@ -51,13 +51,15 @@ begins, respectively.
 - `onEnd` : `function`
 - `onBegin` : `function`
 
-Two additional props are used to control the canvas element. `canvasProps` are
-directly passed to the underlying `<canvas />` element and `backgroundColor` is
-used in the [API's](#api) `clear` convenience method (which itself is called
-internally during resizes)
+Additional props are used to control the canvas element.
 
 - `canvasProps`: `object`
+  - directly passed to the underlying `<canvas />` element
 - `backgroundColor` : `string`, default: `'rgba(0,0,0,0)'`
+  - used in the [API's](#api) `clear` convenience method (which itself is
+    called internally during resizes)
+- `clearOnResize`: `bool`, default: `true`
+  - whether or not the canvas should be cleared when the window resizes
 
 ### API
 

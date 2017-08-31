@@ -26,9 +26,9 @@ export default class SignatureCanvas extends Component {
       return (this.props.minWidth + this.props.maxWidth) / 2
     },
     penColor: 'black',
-    backgroundColor: 'rgba(0,0,0,0)',
     onEnd: () => {},
     onBegin: () => {},
+    backgroundColor: 'rgba(0,0,0,0)',
     clearOnResize: true
   }
 
