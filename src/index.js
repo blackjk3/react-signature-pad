@@ -151,7 +151,7 @@ export default class SignatureCanvas extends Component {
     this._canvas.removeEventListener("touchmove", this._handleTouchMove)
     document.removeEventListener("touchend", this._handleTouchEnd)
 
-    window.addEventListener('resize', this._checkClearOnResize)
+    window.removeEventListener('resize', this._checkClearOnResize)
   }
 
   _handleMouseDown = (ev) => {
