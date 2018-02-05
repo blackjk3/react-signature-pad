@@ -53,6 +53,7 @@ export default class SignatureCanvas extends Component {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     this._reset()
+    this._isEmpty = true
   }
 
   fromDataURL = (dataURL) => {
@@ -119,7 +120,6 @@ export default class SignatureCanvas extends Component {
     this.points = [];
     this._lastVelocity = 0;
     this._lastWidth = (this.props.minWidth + this.props.maxWidth) / 2
-    this._isEmpty = true;
     this._ctx.fillStyle = this.props.penColor
   }
 
