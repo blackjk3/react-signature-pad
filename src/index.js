@@ -35,8 +35,7 @@ export default class SignatureCanvas extends Component {
   componentDidMount () {
     this._ctx = this._canvas.getContext("2d");
 
-    this._handleMouseEvents();
-    this._handleTouchEvents();
+    this.on()
     this._resizeCanvas();
     this.clear()
   }
@@ -140,6 +139,11 @@ export default class SignatureCanvas extends Component {
     this._canvas.addEventListener('touchstart', this._handleTouchStart)
     this._canvas.addEventListener('touchmove', this._handleTouchMove)
     document.addEventListener('touchend', this._handleTouchEnd)
+  }
+
+  on = () => {
+    this._handleMouseEvents()
+    this._handleTouchEvents()
   }
 
   off = () => {
