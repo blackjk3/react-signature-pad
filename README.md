@@ -73,6 +73,8 @@ instance methods of the ref.
 - `isEmpty()` : `boolean`, self-explanatory
 - `clear()` : `void`, clears the canvas using the `backgroundColor` prop
 - `fromDataURL(base64String)` : `void`, writes a base64 image to canvas
+- `off()`: `void`, unbinds all event handlers
+- `on()`: `void`, rebinds all event handlers
 - `getCanvas()`: `canvas`, returns the underlying canvas ref. Allows you to
   modify the canvas however you want or call methods such as `toDataURL()`
 - `getTrimmedCanvas()`: `canvas`, creates a copy of the canvas and returns a
