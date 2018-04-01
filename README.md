@@ -1,5 +1,14 @@
 # React Signature Canvas
 
+[![package-json](https://img.shields.io/github/package-json/v/agilgur5/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
+[![releases](https://img.shields.io/github/release/agilgur5/react-signature-canvas.svg)](https://github.com/agilgur5/react-signature-canvas/releases)
+[![commits](https://img.shields.io/github/commits-since/agilgur5/react-signature-canvas/latest.svg)](https://github.com/agilgur5/react-signature-canvas/commits/master)
+
+[![dt](https://img.shields.io/npm/dt/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
+[![dy](https://img.shields.io/npm/dy/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
+[![dm](https://img.shields.io/npm/dm/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
+[![dw](https://img.shields.io/npm/dw/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
+
 [![NPM](https://nodei.co/npm/react-signature-canvas.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/react-signature-canvas)
 
 A [signature pad](https://github.com/szimek/signature_pad) implementation in
