@@ -324,7 +324,7 @@ export default class SignaturePad extends React.Component {
         </div>
         { this.props.clearButton &&
           <div className="m-signature-pad--footer">
-            <button className="btn btn-default button clear" onClick={this.clear.bind(this)}>Clear</button>
+            <button className="btn btn-default button clear" onClick={this.clear.bind(this)}>{this.props.clearButtonLabel || 'Clear'}</button>
           </div>
         }
       </div>
