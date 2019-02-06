@@ -33,12 +33,12 @@ export default class SignatureCanvas extends Component {
 
   componentDidMount () {
     this._sigPad = new SignaturePad(this._canvas, this._excludeOurProps())
-    this._resizeCanvas();
+    this._resizeCanvas()
     this.on()
   }
 
-  componentWillUnmount() {
-    this.off();
+  componentWillUnmount () {
+    this.off()
   }
 
   // propagate prop updates to SignaturePad
@@ -82,7 +82,7 @@ export default class SignatureCanvas extends Component {
     /* When zoomed out to less than 100%, for some very strange reason,
       some browsers report devicePixelRatio as less than 1
       and only part of the canvas is cleared then. */
-    let ratio =  Math.max(window.devicePixelRatio || 1, 1)
+    let ratio = Math.max(window.devicePixelRatio || 1, 1)
 
     // only change width/height if none has been passed in as a prop
     if (!width) {
@@ -91,7 +91,7 @@ export default class SignatureCanvas extends Component {
     if (!height) {
       canvas.height = canvas.offsetHeight * ratio
     }
-    if(!width || !height) {
+    if (!width || !height) {
       canvas.getContext('2d').scale(ratio, ratio)
       this.clear()
     }
@@ -102,8 +102,8 @@ export default class SignatureCanvas extends Component {
     return <canvas ref={(ref) => { this._canvas = ref }} {...canvasProps} />
   }
 
-
   // all wrapper functions below render
+  //
   on = () => {
     window.addEventListener('resize', this._checkClearOnResize)
     return this._sigPad.on()
