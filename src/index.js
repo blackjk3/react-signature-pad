@@ -34,7 +34,6 @@ export default class SignatureCanvas extends Component {
   componentDidMount () {
     this._sigPad = new SignaturePad(this._canvas, this._excludeOurProps())
     this._resizeCanvas();
-    this.clear()
     this.on()
   }
 
@@ -94,6 +93,7 @@ export default class SignatureCanvas extends Component {
     }
     if(!width || !height) {
       canvas.getContext('2d').scale(ratio, ratio)
+      this.clear()
     }
   }
 
