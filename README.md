@@ -1,8 +1,8 @@
 # React Signature Canvas
 
 [![package-json](https://img.shields.io/github/package-json/v/agilgur5/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
-[![releases](https://img.shields.io/github/release/agilgur5/react-signature-canvas.svg)](https://github.com/agilgur5/react-signature-canvas/releases)
-[![commits](https://img.shields.io/github/commits-since/agilgur5/react-signature-canvas/latest.svg)](https://github.com/agilgur5/react-signature-canvas/commits/master)
+[![releases](https://img.shields.io/github/tag-pre/agilgur5/react-signature-canvas.svg)](https://github.com/agilgur5/react-signature-canvas/releases)
+[![commits](https://img.shields.io/github/commits-since/agilgur5/react-signature-canvas/v1.0.1.svg)](https://github.com/agilgur5/react-signature-canvas/commits/master)
 
 [![dt](https://img.shields.io/npm/dt/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
 [![dy](https://img.shields.io/npm/dy/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
