@@ -98,17 +98,11 @@ The API methods are _mostly_ just wrappers around [`signature_pad`'s API](https:
 
 ## Example
 
-Have a look at the [`example/`](example/) directory.
+You can interact with the example in a few different ways:
 
-This example can be run with:
-
-```bash
-npm start
-```
-
-followed by navigating to [http://localhost:8080/](http://localhost:8080/) in your browser to view it.
-
-## [Demo](https://agilgur5.github.io/react-signature-canvas/)
-
-[View the live demo here](https://agilgur5.github.io/react-signature-canvas/).
-Hosted via the [`gh-pages` branch](https://github.com/agilgur5/react-signature-canvas/tree/gh-pages), which has a standalone version of the code in [`example/`](example/).
+1. Run `npm start` and navigate to [http://localhost:8080/](http://localhost:8080/).<br>
+Hosted locally via the [`example/`](example/) directory
+1. [View the live demo here](https://agilgur5.github.io/react-signature-canvas/).<br>
+Hosted via the [`gh-pages` branch](https://github.com/agilgur5/react-signature-canvas/tree/gh-pages), a standalone version of the code in [`example/`](example/)
+1. [Play with the CodeSandbox here](https://codesandbox.io/s/github/agilgur5/react-signature-canvas/tree/cra-example).<br>
+Hosted via the [`cra-example` branch](https://github.com/agilgur5/react-signature-canvas/tree/gh-pages), a standalone version using [Create React App](https://github.com/facebook/create-react-app).
