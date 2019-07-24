@@ -7,14 +7,11 @@
     "src/",
     "build/"
   ],
-  "scripts": {
-    "lint": "standard --parser babel-eslint",
-    "lint:fix": "standard --parser babel-eslint --fix",
-    "test": "npm run dist && npm pack",
-    "start": "webpack-dev-server -d --inline --hot",
-    "dist": "webpack -p --config webpack.production.config.js",
-    "pub": "npm run dist && npm publish",
-    "changelog": "changelog-maker"
+  "author": "Anton Gilgur",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agilgur5/react-signature-canvas.git"
   },
   "keywords": [
     "react",
@@ -33,12 +30,24 @@
     "signature-pad",
     "react-signature-pad"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/agilgur5/react-signature-canvas.git"
+  "scripts": {
+    "lint": "standard --parser babel-eslint",
+    "lint:fix": "standard --parser babel-eslint --fix",
+    "test": "npm run dist && npm pack",
+    "start": "webpack-dev-server -d --inline --hot",
+    "dist": "webpack -p --config webpack.production.config.js",
+    "pub": "npm run dist && npm publish",
+    "changelog": "changelog-maker"
   },
-  "author": "Anton Gilgur",
-  "license": "Apache-2.0",
+  "peerDependencies": {
+    "prop-types": "^15.5.8",
+    "react": "0.14 - 16",
+    "react-dom": "0.14 - 16"
+  },
+  "dependencies": {
+    "signature_pad": "^2.3.2",
+    "trim-canvas": "^0.1.0"
+  },
   "devDependencies": {
     "@agilgur5/changelog-maker": "^3.0.0",
     "babel-core": "^6.26.3",
@@ -55,14 +64,5 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.10.1"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.5.8",
-    "react": "0.14 - 16",
-    "react-dom": "0.14 - 16"
-  },
-  "dependencies": {
-    "signature_pad": "^2.3.2",
-    "trim-canvas": "^0.1.0"
   }
 }
