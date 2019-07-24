@@ -9,9 +9,13 @@
   ],
   "author": "Anton Gilgur",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/agilgur5/react-signature-canvas",
   "repository": {
     "type": "git",
     "url": "https://github.com/agilgur5/react-signature-canvas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agilgur5/react-signature-canvas/issues"
   },
   "keywords": [
     "react",
