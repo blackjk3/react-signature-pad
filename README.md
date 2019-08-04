@@ -1,4 +1,9 @@
-# React Signature Canvas
+<!-- markdownlint-disable first-line-heading -->
+<p align='center'>
+  <img height='200' src='https://media.giphy.com/media/KH1emXYVIh1hT6UrrU/giphy.gif' />
+</p>
+
+# react-signature-canvas
 
 <!-- releases / versioning -->
 [![package-json](https://img.shields.io/github/package-json/v/agilgur5/react-signature-canvas.svg)](https://npmjs.org/package/react-signature-canvas)
@@ -14,7 +19,7 @@
 [![code coverage](https://img.shields.io/codecov/c/gh/agilgur5/react-signature-canvas/master.svg)](https://codecov.io/gh/agilgur5/react-signature-canvas)
 <br>
 [![NPM](https://nodei.co/npm/react-signature-canvas.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/react-signature-canvas)
-
+<br>
 A React wrapper component around [signature_pad](https://github.com/szimek/signature_pad).
 
 Originally, this was just an _unopinionated_ fork of [react-signature-pad](https://github.com/blackjk3/react-signature-pad) that did not impose any styling or wrap any other unwanted elements around your canvas -- it's just a wrapper around a single canvas element!
