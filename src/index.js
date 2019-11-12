@@ -34,6 +34,7 @@ export default class SignatureCanvas extends Component {
   componentDidMount() {
     this._sigPad = new SignaturePad(this._canvas, this._excludeOurProps());
     this._resizeCanvas();
+    this.off();
     this.on();
   }
 
@@ -83,6 +84,11 @@ export default class SignatureCanvas extends Component {
     }
 
     const canvas = this._canvas;
+    // return if there is no canvas
+    if (!canvas) {
+      return;
+    }
+
     /* When zoomed out to less than 100%, for some very strange reason,
       some browsers report devicePixelRatio as less than 1
       and only part of the canvas is cleared then. */
