@@ -1,5 +1,5 @@
 {
-  "name": "react-signature-canvas",
+  "name": "@ehrocks/react-signature-canvas",
   "version": "1.0.3",
   "description": "A React wrapper component around signature_pad. Unopinionated and heavily updated fork of react-signature-pad",
   "main": "build/index.js",
