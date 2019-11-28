@@ -42,7 +42,8 @@
     "test": "jest",
     "test:pub": "npm run dist && npm pack",
     "pub": "npm run dist && npm publish",
-    "changelog": "changelog-maker"
+    "changelog": "changelog-maker",
+    "postinstall": "patch-package"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
@@ -67,6 +68,8 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.8.0",
+    "patch-package": "^6.2.0",
+    "postinstall-postinstall": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^1.2.7",
