@@ -1,5 +1,5 @@
 diff --git a/node_modules/signature_pad/dist/signature_pad.js b/node_modules/signature_pad/dist/signature_pad.js
-index ca7b3b2..1bf55ec 100644
+index ca7b3b2..16e386b 100644
 --- a/node_modules/signature_pad/dist/signature_pad.js
 +++ b/node_modules/signature_pad/dist/signature_pad.js
 @@ -283,12 +283,14 @@ SignaturePad.prototype._strokeUpdate = function (event) {
@@ -23,8 +23,17 @@ index ca7b3b2..1bf55ec 100644
    }
  };
  
+@@ -300,7 +302,7 @@ SignaturePad.prototype._strokeEnd = function (event) {
+     this._drawDot(point);
+   }
+ 
+-  if (point) {
++  if (point && this._data != null) {
+     var lastPointGroup = this._data[this._data.length - 1];
+     var lastPoint = lastPointGroup[lastPointGroup.length - 1]; // plain object
+ 
 diff --git a/node_modules/signature_pad/dist/signature_pad.mjs b/node_modules/signature_pad/dist/signature_pad.mjs
-index ce5f5a4..1fd9399 100644
+index ce5f5a4..85984b0 100644
 --- a/node_modules/signature_pad/dist/signature_pad.mjs
 +++ b/node_modules/signature_pad/dist/signature_pad.mjs
 @@ -277,12 +277,14 @@ SignaturePad.prototype._strokeUpdate = function (event) {
@@ -47,4 +56,13 @@ index ce5f5a4..1fd9399 100644
 +    }
    }
  };
+ 
+@@ -294,7 +296,7 @@ SignaturePad.prototype._strokeEnd = function (event) {
+     this._drawDot(point);
+   }
+ 
+-  if (point) {
++  if (point && this._data != null) {
+     var lastPointGroup = this._data[this._data.length - 1];
+     var lastPoint = lastPointGroup[lastPointGroup.length - 1]; // plain object
  
