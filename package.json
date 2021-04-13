@@ -1,6 +1,6 @@
 {
   "name": "@ehrocks/react-signature-canvas",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A React wrapper component around signature_pad. Unopinionated and heavily updated fork of react-signature-pad",
   "main": "build/index.js",
   "files": [
@@ -38,12 +38,11 @@
     "lint": "standard --parser babel-eslint",
     "lint:fix": "standard --parser babel-eslint --fix",
     "start": "webpack-dev-server -d --inline --hot",
-    "dist": "webpack -p --config webpack.production.config.js",
+    "dist": "patch-package && webpack -p --config webpack.production.config.js",
     "test": "jest",
     "test:pub": "npm run dist && npm pack",
     "pub": "npm run dist && npm publish",
-    "changelog": "changelog-maker",
-    "postinstall": "patch-package"
+    "changelog": "changelog-maker"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
