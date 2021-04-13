@@ -9,7 +9,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   // don't bundle non-relative packages
-  externals: /^[^.]/,
+  externals: ['trim-canvas'],
   module: {
     loaders: [{
       test: /\.js$/,
