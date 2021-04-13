@@ -1,6 +1,6 @@
 {
   "name": "@ehrocks/react-signature-canvas",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A React wrapper component around signature_pad. Unopinionated and heavily updated fork of react-signature-pad",
   "main": "build/index.js",
   "files": [
@@ -50,10 +50,10 @@
     "react-dom": "0.14 - 16"
   },
   "dependencies": {
-    "signature_pad": "^2.3.2",
     "trim-canvas": "^0.1.0"
   },
   "devDependencies": {
+    "signature_pad": "^2.3.2",
     "@agilgur5/changelog-maker": "^3.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
