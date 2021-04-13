@@ -53,7 +53,6 @@
     "trim-canvas": "^0.1.0"
   },
   "devDependencies": {
-    "signature_pad": "^2.3.2",
     "@agilgur5/changelog-maker": "^3.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
@@ -62,7 +61,6 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-2": "^6.13.0",
-    "canvas-prebuilt": "^1.6.11",
     "css-loader": "^0.24.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -72,6 +70,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^1.2.7",
+    "signature_pad": "^2.3.2",
     "standard": "^13.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.2",
