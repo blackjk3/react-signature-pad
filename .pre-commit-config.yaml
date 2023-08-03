@@ -1,0 +1,7 @@
+# please read more at https://employmenthero.atlassian.net/wiki/spaces/PLAT/pages/2570453361/Gitleaks#Local-scan-setup
+# to make gitleaks scan your commit at local machine
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.17.0
+    hooks:
+      - id: gitleaks-docker
