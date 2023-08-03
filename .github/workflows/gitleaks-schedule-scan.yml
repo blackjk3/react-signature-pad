@@ -1,0 +1,14 @@
+# This file is generate automatically by a platform tool
+# You can modify the schedule but do not remove this file
+# Please read more at https://employmenthero.atlassian.net/l/cp/uqVVmDT0
+# The Gitleaks scanning report can be found at https://docs.google.com/spreadsheets/d/1ourHVLD7Hfs4PMpOsc7kKzjg104vvcPa8OtnkvRRRcc
+name: gitleaks-schedule-scan
+
+on:
+  schedule:
+    - cron: '4 19 * * 0'
+  workflow_dispatch:
+jobs:
+  gitleaks:
+    uses: thinkei/eh-workflows/.github/workflows/gitleaks-schedule-scan.yml@main
+    secrets: inherit
