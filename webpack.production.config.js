@@ -1,21 +1,27 @@
-const path = require('path')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, '/build'),
     filename: 'index.js',
+    path: path.resolve(__dirname, 'build'),
     library: 'SignatureCanvas',
     libraryTarget: 'umd'
   },
-  // don't bundle non-relative packages
   externals: ['trim-canvas'],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: { presets: ['es2015', 'react', 'stage-2'] }
-    }]
-  }
-}
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};

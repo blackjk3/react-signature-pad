@@ -1,34 +1,55 @@
-// transform query objects to query params when using multiple loaders
-function query (loader, query) {
-  return loader + '?' + JSON.stringify(query)
-}
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './example/app.js',
   output: {
-    path: './build',
     filename: 'bundle.js',
-    publicPath: '/build/'
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loaders: [
-        'react-hot',
-        query('babel-loader', { presets: ['es2015', 'react', 'stage-2'] })
-      ]
-    }, {
-      test: /\.cssm$/, loader: 'style-loader!css-loader?modules'
-    }]
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.cssm$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            }
+          },
+        ]
+      }
+    ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './example/index.html', // Path to your HTML template
+    }),
+  ],
   devServer: {
-    host: '0.0.0.0',
-    contentBase: './example',
-    historyApiFallback: true,
-    stats: {
-      // do not show list of hundreds of files included in a bundle
-      chunkModules: false
-    }
-  }
-}
+    static: {
+      directory: path.join(__dirname, 'build'),
+    },
+    compress: true,
+    port: 3000,
+    hot: true,
+  },
+};
