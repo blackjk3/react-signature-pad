@@ -58,6 +58,7 @@ export default class SignatureCanvas extends Component {
     const copy = document.createElement("canvas");
     copy.width = this._canvas.width;
     copy.height = this._canvas.height;
+    console.log(this._canvas.width)
     copy.getContext("2d").drawImage(this._canvas, 0, 0);
     // then trim it
     return trimCanvas(copy);
